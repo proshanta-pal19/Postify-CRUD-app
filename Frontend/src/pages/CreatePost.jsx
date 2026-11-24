@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 const CreatePost = () => {
 
+  const navigate = useNavigate()
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -12,11 +14,10 @@ const CreatePost = () => {
     axios.post('http://localhost:3000/api/new/create', formData)
     .then((res) => {
         toast.success('Post created successfully')
-        console.log(res)
+        navigate('/feed')
     })
     .catch((err) => {
         toast.error('Error creating post')
-        console.log(err)
     })
   }
 

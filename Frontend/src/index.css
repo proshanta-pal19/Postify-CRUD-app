@@ -9,6 +9,10 @@ html, body, #root{
   height: 100%;
 }
 
+body{
+    background-color: #f0f2f5;
+}
+
 /* CreatePost component */
 .create-post{
     height: 100%;
@@ -64,4 +68,47 @@ html, body, #root{
 
 .create-post form button:active{
     transform: translateY(0);
+}
+
+
+/* Feed component */
+.feed{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f2f5;
+    margin: 10px;
+}
+
+.post-card{
+    /* background-color: rgb(215, 215, 215); */
+    background: linear-gradient(90deg, rgb(66, 133, 160) 0%, rgb(68, 191, 119) 50%);
+    padding: 12px;
+    border: none;
+    border-radius: 21px;
+    height: fit-content;
+    width: fit-content;
+    margin: 10px 0;
+}
+
+.post-card img{
+    width: 300px;
+    height: 180px;
+    border-radius: 21px;
+}
+
+.post-card p{
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 767px){
+    .feed{
+        flex-direction: column;
+    }
+    .post-card img{
+        width: 80vw;
+    }
 }
